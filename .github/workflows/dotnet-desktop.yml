@@ -62,10 +62,10 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore ./Backend.Infra.Cryptography.csproj
       - name: Update packages
-        uses: bchir/nuget-update@V1.0.0
+        uses: nuget/setup-nuget@v1
         with:
-          searchFor: "outdated"
-          versionToSelect: "latest"
+          nuget-api-key: ${{ secrets.MAIN }}
+        run: nuget update
       - name: Build
         run: dotnet build --no-restore ./Backend.Infra.Cryptography.csproj
       - name: Pack
