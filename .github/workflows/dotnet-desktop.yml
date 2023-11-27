@@ -61,8 +61,6 @@ jobs:
           dotnet-version: 6.0.x
       - name: Restore dependencies
         run: dotnet restore ./Backend.Infra.Cryptography.csproj
-      - name: Update Nuget packages
-        run: dotnet nuget update ${{env.NAME}}
       - name: Build
         run: dotnet build --no-restore ./Backend.Infra.Cryptography.csproj
       - name: Pack
