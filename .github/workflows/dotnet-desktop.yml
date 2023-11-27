@@ -65,4 +65,4 @@ jobs:
       - name: Pack
         run: dotnet pack -o ./ ./Backend.Infra.Cryptography.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
       - name: Publish
-        run: nuget push ./${{env.NAME}}.${{env.VERSION}}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.MAIN}} -SkipDuplicate
+        run: nuget push /home/runner/work/CFSDev.Backend.Infra.Cryptography/CFSDev.Backend.Infra.Cryptography/CFSDev.Beckend.Infra.Cryptography.${{env.VERSION}}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.MAIN}} -SkipDuplicate
