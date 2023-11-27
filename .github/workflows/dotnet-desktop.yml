@@ -40,16 +40,16 @@ name: .NET Core Desktop
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     env:
-      NAME: CFSDev.Backend.Infra.Cryptography/CFSDev.Backend.Infra.Cryptography/CFSDev.Beckend.Infra.Cryptography
+      PATH: /home/runner/work/CFSDev.Backend.Infra.Cryptography/CFSDev.Backend.Infra.Cryptography/CFSDev.Beckend.Infra.Cryptography
       VERSION: 1.0.0
 
     steps:
@@ -65,4 +65,4 @@ jobs:
       - name: Pack
         run: dotnet pack -o ./ ./Backend.Infra.Cryptography.csproj -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
       - name: Publish
-        run: nuget push /home/runner/work/CFSDev.Backend.Infra.Cryptography/CFSDev.Backend.Infra.Cryptography/CFSDev.Beckend.Infra.Cryptography.${{env.VERSION}}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.MAIN}} -SkipDuplicate
+        run: nuget push ${{env.PATH}}.${{env.VERSION}}.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.MAIN}} -SkipDuplicate
