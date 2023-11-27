@@ -8,7 +8,7 @@
     <PackageId>CFSDev.Beckend.Infra.Cryptography</PackageId>
     <Authors>Caio F. Santana</Authors>
     <Company>CFS Dev LTDA</Company>
-    <RepositoryUrl></RepositoryUrl>
+    <RepositoryUrl>https://github.com/cfsant/CFSDev.Backend.Infra.Cryptography</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
