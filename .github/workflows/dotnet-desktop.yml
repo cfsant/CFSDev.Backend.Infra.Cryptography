@@ -55,7 +55,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: nuget/setup-nuget@v1
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
@@ -63,7 +62,7 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore ./Backend.Infra.Cryptography.csproj
       - name: Update Nuget packages
-        run: nuget update
+        run: dotnet nuget update ${{env.NAME}}
       - name: Build
         run: dotnet build --no-restore ./Backend.Infra.Cryptography.csproj
       - name: Pack
