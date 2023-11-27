@@ -49,6 +49,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      NAME: CFSDev.Beckend.Infra.Cryptography
       PATH: /home/runner/work/CFSDev.Backend.Infra.Cryptography/CFSDev.Backend.Infra.Cryptography/CFSDev.Beckend.Infra.Cryptography
       VERSION: 1.0.0
 
