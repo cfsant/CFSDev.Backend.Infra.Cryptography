@@ -61,10 +61,8 @@ jobs:
           dotnet-version: 6.0.x
       - name: Restore dependencies
         run: dotnet restore ./Backend.Infra.Cryptography.csproj
-      - name: Update packages
+      - name: Update nuget packages
         uses: nuget/setup-nuget@v1
-        with:
-          nuget-api-key: ${{ secrets.MAIN }}
         run: nuget update
       - name: Build
         run: dotnet build --no-restore ./Backend.Infra.Cryptography.csproj
